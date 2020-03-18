@@ -35,7 +35,7 @@ open class BaseRepository() {
                         disposable.dispose()
                     }
                     override fun onError(throwable: Throwable) {
-                        handle500Error(throwable, moduleId)
+                        handle500Error(throwable)
                         networkCallback.onError(throwable)
                         disposable.dispose()
                     }
@@ -60,7 +60,7 @@ open class BaseRepository() {
         }
     }
 
-    private fun handle500Error(throwable: Throwable, moduleId: String) {
+    private fun handle500Error(throwable: Throwable) {
         if (throwable is HttpException && throwable.code() in 500..599) {
             Log.d("module_id",throwable.code().toString())
         }

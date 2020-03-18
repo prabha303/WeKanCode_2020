@@ -9,12 +9,12 @@ import com.prabha.wekan.R
 import com.prabha.wekan.ui.model.FuelStationsModel
 import java.util.ArrayList
 
-class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): RecyclerView.Adapter<FuelStationAdapter.Companion.AddressViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddressViewHolder{
+class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): RecyclerView.Adapter<FuelStationAdapter.Companion.FuelStationViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FuelStationViewHolder{
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fuel_station_adapter, parent, false)
-        return AddressViewHolder(view)
+        return FuelStationViewHolder(view)
     }
-    override fun onBindViewHolder(holder:AddressViewHolder, position: Int) {
+    override fun onBindViewHolder(holder:FuelStationViewHolder, position: Int) {
         val docItem = fuelStationsModel.get(holder.adapterPosition)
         val title = docItem.ID.toString() + " - "  + docItem.StationName
         holder.fuel_station_name.text = title
@@ -27,7 +27,7 @@ class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): 
         holder.country.text = city
     }
     companion object {
-        class AddressViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        class FuelStationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val fuel_station_name : TextView = view.findViewById(R.id.fuel_station_name)
             val access_days_time : TextView = view.findViewById(R.id.access_days_time)
             val date_last_confirmed : TextView = view.findViewById(R.id.date_last_confirmed)

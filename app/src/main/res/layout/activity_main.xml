@@ -6,17 +6,31 @@
     xmlns:app = "http://schemas.android.com/apk/res-auto">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width = "match_parent"
+        app:layout_scrollFlags = "scroll|snap|enterAlways"
         android:layout_height = "wrap_content">
+
 
 
         <androidx.appcompat.widget.Toolbar
             android:id = "@+id/appbarlayout_tool_bar"
             android:background = "@color/colorPrimary"
             android:layout_width = "match_parent"
+            android:visibility="visible"
             android:layout_height = "?attr/actionBarSize"
             app:layout_scrollFlags = "scroll|snap|enterAlways"
             app:theme = "@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme = "@style/ThemeOverlay.AppCompat.Light" />
+            app:popupTheme = "@style/ThemeOverlay.AppCompat.Light" >
+
+           <!-- <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:iconifiedByDefault="false"
+                android:layout="center"
+                android:queryHint="Search"
+                android:layout_centerHorizontal="true" />-->
+
+        </androidx.appcompat.widget.Toolbar>
 
 
     </com.google.android.material.appbar.AppBarLayout>

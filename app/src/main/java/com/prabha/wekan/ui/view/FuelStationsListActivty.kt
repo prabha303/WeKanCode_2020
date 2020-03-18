@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lynkdriver.lynk.factory.ViewModelFactory
 import com.prabha.wekan.R
 import com.prabha.wekan.ui.adapter.FuelStationAdapter
-import com.prabha.wekan.ui.listener.EndlessScrollListener
 import com.prabha.wekan.ui.model.FuelStationResponse
 import com.prabha.wekan.ui.viewmodel.FuelStationViewModel
 import dagger.android.support.DaggerAppCompatActivity

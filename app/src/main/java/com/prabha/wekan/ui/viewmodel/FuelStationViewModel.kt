@@ -11,15 +11,15 @@ import javax.inject.Inject
 
 class FuelStationViewModel @Inject constructor(val repository : FuelStationRepository) :  BaseViewModel(){
 
-
     val fuelStationDataLiveData = MutableLiveData<FuelStationResponse>()
     val fuelStationErrorDataLiveData = MutableLiveData<String>()
     fun observeFuelStationResponse() = fuelStationDataLiveData
     fun observeFuelStationErrorResponse() = fuelStationErrorDataLiveData
-    fun getFuelData(limit : Int) {
-        repository.driverOffline(limit, object : NetworkCallback {
+
+    fun getFuelData() {
+
+        repository.getFuelStationlist(object : NetworkCallback {
             override fun onSuccess(response: Any?) {
-                Log.d("onSuccess", "Enter")
                 val responseData = response as FuelStationResponse
                 fuelStationDataLiveData.postValue(responseData)
             }

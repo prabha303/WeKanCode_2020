@@ -10,7 +10,7 @@ class FuelStationsModel: Serializable {
 
     @SerializedName("id")
     @Expose
-    var id: Int? = 0
+    var ID: Int? = 0
 
     @SerializedName("access_code")
     @Expose
@@ -18,7 +18,7 @@ class FuelStationsModel: Serializable {
 
     @SerializedName("access_days_time")
     @Expose
-    var AccessDaysTime: String? = null
+    var AccessDaysTime: String? = ""
 
     @SerializedName("access_detail_code")
     @Expose
@@ -30,7 +30,7 @@ class FuelStationsModel: Serializable {
 
     @SerializedName("date_last_confirmed")
     @Expose
-    var DateLastConfirmed: String? = null
+    var DateLastConfirmed: String? = ""
 
     @SerializedName("expected_date")
     @Expose
@@ -58,7 +58,7 @@ class FuelStationsModel: Serializable {
 
     @SerializedName("station_name")
     @Expose
-    var StationName: String? = null
+    var StationName: String? = ""
 
     @SerializedName("station_phone")
     @Expose
@@ -70,7 +70,7 @@ class FuelStationsModel: Serializable {
 
     @SerializedName("facility_type")
     @Expose
-    var FacilityType: String? = null
+    var FacilityType: String? = ""
 
     @SerializedName("latitude")
     @Expose
@@ -84,15 +84,19 @@ class FuelStationsModel: Serializable {
     var City: String? = null
     @SerializedName("intersection_directions")
     @Expose
-    var IntersectionDirections: String? = null
+    var IntersectionDirections: String? = ""
 
     @SerializedName("street_address")
     @Expose
-    var StreetAddress: String? = null
+    var StreetAddress: String? = ""
 
     @SerializedName("groups_with_access_code_fr")
     @Expose
     var GroupsWithAccessCodeFr: String? = null
+
+    @SerializedName("country")
+    @Expose
+    var Country: String? = ""
 
 
 

@@ -30,28 +30,21 @@ open class BaseRepository() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableObserver<Any>() {
-
-
                     override fun onNext(response: Any) {
                         networkCallback.onSuccess(response)
                         disposable.dispose()
                     }
-
                     override fun onError(throwable: Throwable) {
                         handle500Error(throwable, moduleId)
                         networkCallback.onError(throwable)
                         disposable.dispose()
                     }
-
                     override fun onComplete() {
                         Log.e("BaseRepository", "Retry completed moduleId $moduleId retry count $retryCount")
                         disposable.dispose()
                     }
-
                 })
-
         disposable.add(disposableObserver)
-
     }
 
     private fun zipperFunction(retryCount: Int): BiFunction<Throwable, Long, Unit> {
@@ -69,7 +62,6 @@ open class BaseRepository() {
 
     private fun handle500Error(throwable: Throwable, moduleId: String) {
         if (throwable is HttpException && throwable.code() in 500..599) {
-
             Log.d("module_id",throwable.code().toString())
         }
     }
@@ -83,7 +75,6 @@ open class BaseRepository() {
         } else {
             list.add(1000L)
         }
-
         return list
     }
 

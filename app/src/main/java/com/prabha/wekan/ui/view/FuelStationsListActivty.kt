@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
-import androidx.core.view.MenuItemCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,11 +36,8 @@ class FuelStationsListActivty :DaggerAppCompatActivity() {
         linearLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         recycler_view.layoutManager = linearLayoutManager
         fuelStationViewModel = ViewModelProviders.of(this, viewModelFactory).get(FuelStationViewModel::class.java)
-
-        fuelStationViewModel.getFuelData()
         observeFuelStation()
     }
-
 
     private fun observeFuelStation() {
         fuelStationViewModel.observeFuelStationResponse().observe(this, Observer<ArrayList<FuelStationsModel>> { fuelStation ->

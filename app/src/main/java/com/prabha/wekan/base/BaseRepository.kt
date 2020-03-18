@@ -1,9 +1,6 @@
 package com.prabha.wekan.base
 
-import android.content.Intent
 import android.util.Log
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.prabha.wekan.R
 import com.prabha.wekan.network.NetworkCallback
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -11,8 +8,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.BiFunction
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
 import retrofit2.HttpException
 
 open class BaseRepository() {

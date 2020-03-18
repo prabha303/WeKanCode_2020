@@ -13,7 +13,7 @@ import java.util.*
 
 
 class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): RecyclerView.Adapter<FuelStationAdapter.Companion.FuelStationViewHolder>(), Filterable {
-    val mFuelStationsModelFilter = FuelStationsModelFilter()
+    private val mFuelStationsModelFilter = FuelStationsModelFilter()
     val mFuelStationsList  =fuelStationsModel
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FuelStationViewHolder{
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fuel_station_adapter, parent, false)

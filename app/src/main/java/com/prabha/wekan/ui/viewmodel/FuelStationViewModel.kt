@@ -18,7 +18,7 @@ class FuelStationViewModel @Inject constructor(val repository : FuelStationRepos
     fun observeFuelStationNoDataFound() = fuelStationNoDataFound
     fun observeFuelStationErrorResponse() = fuelStationErrorDataLiveData
 
-    fun getFuelData() {
+    init {
         repository.getFuelStationlist(object : NetworkCallback {
             override fun onSuccess(response: Any?) {
                 val responseData = response as FuelStationResponse
@@ -33,4 +33,5 @@ class FuelStationViewModel @Inject constructor(val repository : FuelStationRepos
             }
         })
     }
+
 }

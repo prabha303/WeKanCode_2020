@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/address_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/_12sdp"
+    android:layout_marginLeft="@dimen/_12sdp"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:layout_marginBottom="@dimen/_14sdp"
+    android:background="?selectableItemBackground"
+    android:clickable="true"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <TextView
+        android:id="@+id/fuel_station"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="select_destination"
+        android:gravity="center"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/colorPrimaryDark"
+        />
+</LinearLayout>

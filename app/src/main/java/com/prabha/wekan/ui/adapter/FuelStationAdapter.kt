@@ -3,13 +3,18 @@ package com.prabha.wekan.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.prabha.wekan.R
 import com.prabha.wekan.ui.model.FuelStationsModel
-import java.util.ArrayList
+import java.util.*
 
-class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): RecyclerView.Adapter<FuelStationAdapter.Companion.FuelStationViewHolder>() {
+
+class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): RecyclerView.Adapter<FuelStationAdapter.Companion.FuelStationViewHolder>(), Filterable {
+    val mFuelStationsModelFilter = FuelStationsModelFilter()
+    val mFuelStationsList  =fuelStationsModel
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FuelStationViewHolder{
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fuel_station_adapter, parent, false)
         return FuelStationViewHolder(view)
@@ -40,4 +45,35 @@ class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): 
     override fun getItemCount(): Int {
         return fuelStationsModel.size
     }
+
+    override fun getFilter(): Filter {
+        return  mFuelStationsModelFilter
+    }
+
+
+ inner class FuelStationsModelFilter : Filter() {
+        override fun performFiltering(constraint: CharSequence?): FilterResults {
+            val filterString: String = constraint.toString().toLowerCase(Locale.getDefault())
+            val results = FilterResults()
+            val list: ArrayList<FuelStationsModel> = mFuelStationsList
+            val count = list.size
+            val nlist = ArrayList<FuelStationsModel>(count)
+            for (i in 0 until count) {
+                if (list[i].StationName!!.toLowerCase(Locale.getDefault()).contains(filterString)) {
+                    nlist.add(list[i])
+                }
+            }
+            results.values = nlist
+            results.count = nlist.size
+            return results
+        }
+
+     @Suppress("UNCHECKED_CAST")
+     override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+            fuelStationsModel = results?.values as ArrayList<FuelStationsModel>
+            notifyDataSetChanged()
+        }
+    }
+
 }
+

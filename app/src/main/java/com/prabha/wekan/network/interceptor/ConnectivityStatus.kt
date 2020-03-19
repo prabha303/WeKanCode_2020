@@ -3,7 +3,6 @@ package com.prabha.wekan.network.interceptor
 import android.content.Context
 import android.content.ContextWrapper
 import android.net.ConnectivityManager
-import android.net.NetworkInfo
 
 class ConnectivityStatus(base: Context) : ContextWrapper(base) {
     companion object {

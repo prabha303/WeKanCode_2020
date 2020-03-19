@@ -54,7 +54,6 @@ class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): 
  inner class FuelStationsModelFilter : Filter() {
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             val filterString: String = constraint.toString().toLowerCase(Locale.getDefault())
-            val results = FilterResults()
             val list: ArrayList<FuelStationsModel> = mFuelStationsList
             val count = list.size
             val nlist = ArrayList<FuelStationsModel>(count)
@@ -63,6 +62,7 @@ class FuelStationAdapter(var fuelStationsModel : ArrayList<FuelStationsModel>): 
                     nlist.add(list[i])
                 }
             }
+            val results = FilterResults()
             results.values = nlist
             results.count = nlist.size
             return results

@@ -97,7 +97,4 @@ class FuelStationsModel: Serializable {
     @SerializedName("country")
     @Expose
     var Country: String? = ""
-
-
-
 }

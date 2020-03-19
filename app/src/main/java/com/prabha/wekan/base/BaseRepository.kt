@@ -57,7 +57,7 @@ open class BaseRepository() {
 
     private fun handle500Error(throwable: Throwable) {
         if (throwable is HttpException && throwable.code() in 500..599) {
-            Log.d("module_id",throwable.code().toString())
+            Log.d("module_id","-"+throwable.code().toString())
         }
     }
 

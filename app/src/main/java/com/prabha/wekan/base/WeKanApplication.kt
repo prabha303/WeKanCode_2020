@@ -14,9 +14,6 @@ class WeKanApplication() : DaggerApplication(){
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
      }
-
-
-
     companion object {
         private var instance: WeKanApplication? = null
         fun getApplicationContext(): Context {

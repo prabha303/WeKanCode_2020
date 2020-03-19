@@ -58,7 +58,6 @@ class NetworkModule {
         httpClient.cache(cache)
         httpClient.addInterceptor(networkInterceptor)
         httpClient.addInterceptor(responseInterceptor)
-//        httpClient.addInterceptor(mockInterceptor)
         httpClient.addInterceptor(logging)
         httpClient.retryOnConnectionFailure(false)
         httpClient.connectTimeout(180, TimeUnit.SECONDS)

@@ -26,15 +26,13 @@ class FuelStationsListActivty :DaggerAppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private lateinit var  fuelStationViewModel : FuelStationViewModel
-    private lateinit var  linearLayoutManager : LinearLayoutManager
     private  var fuelStationAdapter:FuelStationAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(appbarlayout_tool_bar);
-        linearLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        recycler_view.layoutManager = linearLayoutManager
+        recycler_view.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         fuelStationViewModel = ViewModelProviders.of(this, viewModelFactory).get(FuelStationViewModel::class.java)
         observeFuelStation()
     }

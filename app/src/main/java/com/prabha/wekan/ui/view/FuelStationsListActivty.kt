@@ -66,7 +66,7 @@ class FuelStationsListActivty :DaggerAppCompatActivity() {
         searchView.setOnQueryTextListener(object : OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchView.clearFocus()
-                return false;
+                return false
         }
         override fun onQueryTextChange(searchText: String): Boolean {
            fuelStationAdapter?.getFilter()?.filter(searchText)

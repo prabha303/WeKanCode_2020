@@ -56,6 +56,7 @@ class FuelStationsListActivty :DaggerAppCompatActivity() {
         })
     }
 
+
     @Override
     override fun onCreateOptionsMenu(menu : Menu) : Boolean {
         val inflater = menuInflater

@@ -47,7 +47,7 @@ class FuelStationsListActivty :DaggerAppCompatActivity() {
         })
         fuelStationViewModel.observeFuelStationErrorResponse().observe(this, Observer<String> { fuelStationAPIError->
             progressBar.visibility = View.GONE
-            Toast.makeText(this@FuelStationsListActivty,"Error : " +fuelStationAPIError, Toast.LENGTH_LONG).show()
+            Toast.makeText(this@FuelStationsListActivty, "Error : $fuelStationAPIError", Toast.LENGTH_LONG).show()
         })
         fuelStationViewModel.observeFuelStationNoDataFound().observe(this, Observer<String> { noData ->
             recycler_view.visibility = View.GONE
